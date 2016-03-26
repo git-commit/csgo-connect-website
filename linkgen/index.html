@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CS-GO Connect Link Generator</title>
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <!-- Milligram CSS minified -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.8/clipboard.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-app="LinkGen" ng-controller="LinkGenController">
+  <section class="container">
+    <h5 class="title"></h5>
+    <h5 class="title">Generate your own connect link</h5>
+    <form>
+      <fieldset>
+        <label for="ipField">Server-Adress</label>
+        <input type="text" placeholder="10.0.0.1" id="ipField" ng-model="ip">
+
+        <label for="portField">Port</label>
+        <input type="text" placeholder="1337" id="portField" ng-model="port">
+
+        <label for="pwField">Password</label>
+        <input type="text" placeholder="correct battery horse staple" id="pwField" ng-model="pw">
+
+        <div>
+          <input type="checkbox" id="autoField" ng-model="auto" checked>
+          <label class="label-inline" for="autoField">Autoconnect?</label>
+        </div>
+      </fieldset>
+    </form>
+    <h5 class="title">Link</h5>
+    <form>
+      <fieldset>
+        <input type="text" id="clip-target" value="http://snowdragon.biz/dona/csgo/?ip={{ip}}&amp;port={{port}}&amp;pw={{pw}}&amp;auto={{auto}}"></input>
+        <button id="clip-button" data-clipboard-target="#clip-target" class="button">Copy</button>
+      </fieldset>
+    </form>
+
+
+  </section>
+
+  <script>
+    var clipboard = new Clipboard("#clip-button");
+  </script>
+</body>
+</html>
