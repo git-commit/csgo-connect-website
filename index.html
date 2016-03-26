@@ -1,98 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Connecting to server...</title>
-<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"light-bottom"};
-</script>
+<head>
+  <meta charset="utf-8">
+  <title>Connecting to server...</title>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
-<!-- End Cookie Consent plugin -->
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 
-    
-    <!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
 
-<!-- CSS Reset -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <!-- Milligram CSS minified -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-<!-- Milligram CSS minified -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
-<link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
+  <header class="header">
+    <section class="container">
+      <h1 class="title">DonaSpock's Community CS:GO Server</h1>
+      <p class="description">Automagically connecting...</p>
+      <a class="button" id="server_connect" href="steam://connect/109.230.254.7:27015/">Click here if nothing happens</a><br/>
+    </section>
+  </header><br/>
+  <div class="container">
 
-            <header class="header">
-                <section class="container">
-                    <h1 class="title">DonaSpock's Community CS:GO Server</h1>
-                    <p class="description">Automagically connecting...</p>
-                    <a class="button" id="server_connect" href="steam://connect/5.9.113.170:27017/">Click here if nothing happens</a><br/>
-                </section>
-            </header><br/>
-<div class="container">
-<!--<div class="row">
-<h2>Automagically connecting to DonaSpock's community CS:GO server...</h2>
-</div>
-<div class="row">
-<a class="button" id="server_connect" href="steam://connect/5.9.113.170:27017/">Click here if nothing happens</a>
-</div>
-<br/>
--->
-<div class="row">or connect to the server manually by typing using the console:</div>
-<pre id="connect_command"></pre>
-</div>
-<div align="center">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- csgo-connect -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1528935150953165"
-     data-ad-slot="4512014531"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
+    <div class="row">or connect to the server manually by typing using the console:</div>
+    <pre id="connect_command">connect 109.230.254.7:27015; password default</pre>
+  </div>
 
+<script src="connect.js"></script>
 
-
-
-    <script>
-        if (!String.format) {
-  String.format = function(format) {
-    var args = Array.prototype.slice.call(arguments, 1);
-    return format.replace(/{(\d+)}/g, function(match, number) {
-      return typeof args[number] != 'undefined'
-        ? args[number]
-        : match
-      ;
-    });
-  };
-}
-
-        // parse get
-        var parts = window.location.search.substr(1).split("&");
-        var $_GET = {};
-        for (var i = 0; i < parts.length; i++) {
-            var temp = parts[i].split("=");
-            $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
-        }
-
-        // set link
-        var server_link = document.getElementById("server_connect");
-        server_link.setAttribute('href', server_link.getAttribute('href') + $_GET['pw']);
-
-        var ip = "5.9.113.170:27017";
-        document.getElementById("connect_command").innerHTML  = String.format("connect {0}; password {1}", ip, $_GET['pw']);
-
-        // call link
-        if ($_GET['auto']!='no' ){
-            window.setTimeout(function() {
-                location.href = document.getElementsByTagName("a")[0].href;
-            }, 2000);
-        }
-    </script>
-  </body>
+</body>
 </html>
